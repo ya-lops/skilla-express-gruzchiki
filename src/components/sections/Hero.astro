@@ -10,23 +10,29 @@ interface Props {
 
 const { brandData, type = "main" } = Astro.props;
 
+import { getGlobalMinPriceWithDiscount, getDiscountPercent } from "@/utils/price";
+
+const discount = getDiscountPercent(brandData.main.adv_price_percent);
+
+const { price, discountedPrice, showDiscount } = getGlobalMinPriceWithDiscount(
+  brandData.services,
+  discount,
+);
+
 const firstServiceUrl = brandData.services[0].url.toLowerCase();
 ---
 
 {
   type == "main" && (
-    <section
-      class="hero grid grid-cols-[100%] min-h-[730px] bg-hero-main-surface text-hero-main-text overflow-clip isolate"
-      data-cmp="Hero"
-    >
+    <section class="hero grid grid-cols-[100%] min-h-[650px] bg-hero-main-surface text-hero-main-text overflow-clip" data-cmp="Hero">
       <div class="container h-full">
         <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center h-full py-8">
           <div class="_hero-image">
-            <img class="scale-200 md:scale-125 lg:scale-none" src="/images/hero-main.webp" alt="" fetchpriority="high" />
+            <img class="" src="/images/hero-main.webp" alt="" fetchpriority="high" />
           </div>
 
           <div class="_hero-content flex flex-col gap-10">
-            <h1 class="_hero-title typo-h1 text-left text-balance">Грузчики и разнорабочие в {brandData.main.city_rod}</h1>
+            <h1 class="_hero-title typo-h1 text-left text-balance">Работники для любых задач от {showDiscount ? discountedPrice : price} руб.</h1>
 
             <HeroFeatures />
 
@@ -51,12 +57,11 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
       <div class="container h-full">
         <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center h-full">
           <div class="_hero-content flex flex-col gap-10 py-8">
-            <h1 class="_hero-title typo-h1 text-left text-balance">
-              Работаем
-              <br />с 2010 года
+            <h1 class="_hero-title typo-h1 text-left text-balance isolate">
+              Рабочий Экспресс выполнил <span class="whitespace-nowrap">87 000</span> заказов за 10 лет работы
             </h1>
 
-            <HeroFeatures />
+            <p>98.4% клиентов оценили оказанные им услуги на отлично</p>
 
             <div class="_hero-actions flex items-center gap-8">
               <div class="_hero-actions-items">

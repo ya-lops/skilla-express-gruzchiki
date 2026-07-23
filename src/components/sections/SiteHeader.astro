@@ -50,7 +50,7 @@ const links = [
                       class:list={[
                         "relative flex items-center no-underline text-inherit py-3",
                         "after:content-[''] after:absolute after:inset-0 after:top-auto after:h-0.75 after:rounded-2xl after:bg-(--_c,transparent) after:transition-colors after:duration-125",
-                        { "[--_c:var(--color-accent)]": active, "hover:[--_c:var(--color-text-secondary-inverse)]": !active },
+                        { "[--_c:var(--color-accent)]": active, "hover:[--_c:var(--color-text-secondary)]": !active },
                       ]}
                       aria-current={active ? "page" : undefined}
                     >
@@ -65,7 +65,7 @@ const links = [
           <BlockMessengersLinks {brandData} />
 
           <div class="_header-contact-actions flex items-center gap-4">
-            <Button href="#contact" text="Позвонить" variant="accent" />
+            <Button href="#contact" text="Позвонить" variant="primary" />
             <Button href="#personal" text="Личный кабинет" variant="secondary" />
           </div>
         </div>
