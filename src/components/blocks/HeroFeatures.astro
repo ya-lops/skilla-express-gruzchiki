@@ -13,7 +13,7 @@ const features = [
     text: "Отсрочка при крупных заказах",
   },
   {
-    text: "26 офисов в России и СНГ",
+    text: "Удобная оплата",
   },
 ];
 ---
@@ -23,7 +23,7 @@ const features = [
     {
       features.map((feature) => (
         <li class="typo-t2 flex items-center gap-3 mb-2">
-          <span class="w-2 h-2 shrink-0 rounded-full bg-button-surface-accent-inverse"></span>
+          <span class="w-2 h-2 shrink-0 rounded-full bg-text-primary"></span>
           <span set:html={feature.text} />
         </li>
       ))

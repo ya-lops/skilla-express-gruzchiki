@@ -43,32 +43,14 @@ const serviceIcons = ["office", "cargo", "helmet"];
             return (
               <div
                 class:list={[
-                  "_service-card flex flex-col items-center px-6 rounded-xl text-center",
+                  "_service-card flex flex-col items-start px-6 rounded-xl text-left",
                   isFeatured
-                    ? "pt-6 lg:pt-12 col-span-1 sm:col-span-2 lg:col-span-4 bg-surface-primary-inverse text-text-primary-inverse"
-                    : "py-12 col-span-1 sm:col-span-1 lg:col-span-3 bg-surface-secondary text-text-primary",
+                    ? "pt-6 pb-6 lg:pb-12 col-span-1 sm:col-span-2 lg:col-span-4 bg-surface-primary text-text-primary add-shadow"
+                    : "py-6 lg:py-12 col-span-1 sm:col-span-1 lg:col-span-3 bg-surface-primary text-text-primary",
                 ]}
               >
-                {isFeatured && <p class="mb-4">24/7</p>}
-
-                <h3 class="_service-card-title mb-6 typo-h4">{service.name}</h3>
-                <p
-                  class:list={["_service-card-description mb-8 typo-t3", isFeatured ? "text-text-secondary-inverse" : "text-text-primary"]}
-                >
-                  {service.description}
-                </p>
-
-                <Button
-                  href={`/${service.url.toLowerCase()}`}
-                  class="mt-auto not-last:mb-12"
-                  variant="primary"
-                  inverse={isFeatured}
-                  arrow="right"
-                  text={`от ${discountedPrice} ₽`}
-                />
-
                 {isFeatured && (
-                  <div class="_service-card-image mt-auto w-full aspect-video rounded-lg">
+                  <div class="_service-card-image flex items-center justify-center w-full aspect-[1.67] rounded-lg w-full add-gradient">
                     {media === "icon" ? (
                       <IconService name={serviceIcons[index]} class="w-full h-full" />
                     ) : (
@@ -81,6 +63,21 @@ const serviceIcons = ["office", "cargo", "helmet"];
                     )}
                   </div>
                 )}
+
+                {isFeatured && <p class="mb-4">24/7</p>}
+
+                <h3 class="_service-card-title mb-6 typo-h4">{service.name}</h3>
+                <p class:list={["_service-card-description  typo-t3", isFeatured ? "text-text-primary mb-12" : "text-text-primary mb-8"]}>
+                  {service.description}
+                </p>
+
+                <Button
+                  href={`/${service.url.toLowerCase()}`}
+                  class="mt-auto"
+                  variant="secondary"
+                  arrow="right"
+                  text={`от ${discountedPrice} ₽`}
+                />
               </div>
             );
           })

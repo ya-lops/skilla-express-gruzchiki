@@ -90,7 +90,7 @@ const showDiscount = hasDiscount(discountPercent);
 
                         <div class="flex items-center justify-between typo-t2 px-4 lg:p-6  text-table-highlight-heading">
                           <div class="lg:contents flex items-center justify-between w-full p-4 rounded-xl bg-surface-primary-inverse">
-                            <div class="lg:hidden text-text-secondary-inverse typo-t3">
+                            <div class="lg:hidden text-text-primary typo-t3">
                               Цена по акции
                               <br />
                               {discountPercent}%
@@ -102,8 +102,8 @@ const showDiscount = hasDiscount(discountPercent);
                         </div>
 
                         <div class="flex items-center justify-between typo-t2 p-6 text-center">
-                          <div class="lg:hidden typo-t3 text-text-secondary">Обычная цена</div>
-                          <div class="lg:w-full p-4 lg:p-0 text-center">
+                          <div class="lg:hidden typo-t3 text-text-secondary pl-2 lg:pl-0">Обычная цена</div>
+                          <div class="lg:w-full p-2 lg:p-0 text-center">
                             от {subService.price} ₽/{subService.unit}
                           </div>
                         </div>

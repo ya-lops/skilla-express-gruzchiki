@@ -9,18 +9,22 @@ interface Props {
 const { brandData } = Astro.props;
 ---
 
-<section id="kp" class="overflow-clip scroll-mt-[100px] py-8 lg:py-20" data-cmp="KP">
-  <div class="container bg-kp-surface p-15 rounded-2xl">
-    <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr_365px] gap-3 lg:gap-6 isolate">
-      <h2 class="max-w-[492px] text-left typo-h3 text-kp-text *:text-kp-text-accent *:not-italic">
-        Бесплатно <em>сделаем</em> коммерческое предложение <em>индивидуально под ваши потребности</em>
+<section id="kp" class="scroll-mt-[100px] py-8 lg:py-20" data-cmp="KP">
+  <div class="container relative bg-kp-surface p-6 lg:p-15 rounded-2xl add-shadow overflow-clip isolate">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr_365px] gap-3 lg:gap-6 isolate">
+      <h2 class="order-1 max-w-[492px] text-left typo-h3 text-kp-text *:text-kp-text-accent *:not-italic *:bg-[#ffe40a] leading-trim">
+        <em>Бесплатно</em> сделаем <em> коммерческое предложение </em>индивидуально под ваши потребности
       </h2>
 
-      <div class="self-end origin-bottom pointer-events-none -mb-15">
+      <div class="order-last lg:order-2 self-end origin-bottom pointer-events-none lg:-mb-15">
         <img class="" src="/images/kp-image.webp" alt="" loading="lazy" />
       </div>
 
-      <KpForm />
+      <div class="order-3">
+        <KpForm />
+      </div>
+
+      <div class="_decorative absolute -z-1 left-[50%] bottom-0 translate-x-[-50%] translate-y-[25%] w-[497px] aspect-square add-gradient rounded-full"></div>
     </div>
   </div>
 </section>

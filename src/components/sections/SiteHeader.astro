@@ -25,10 +25,15 @@ const links = [
 ];
 ---
 
-<div x-data="{ mobileNavOpen: false }" class="sticky top-0 z-5" data-cmp="SiteHeader">
-  <header class="bg-header-surface text-header-text">
+<div 
+  x-data="{ mobileNavOpen: false, stuck: false }" 
+  x-init="window.addEventListener('scroll', () => { stuck = window.scrollY > 50 })" 
+  class="sticky top-0 z-5" 
+  data-cmp="SiteHeader"
+>
+  <header class="text-header-text transition-all duration-300" :class="stuck ? 'bg-white shadow-lg' : 'bg-transparent'">
     <div class="container">
-      <div class="_header-inner flex items-center justify-between gap-4 py-4 lg:py-6">
+      <div class="_header-inner flex items-center justify-between gap-4 py-4 lg:py-11">
         <div class="_header-logo">
           <a href="/">
             <img
@@ -65,7 +70,7 @@ const links = [
           <BlockMessengersLinks {brandData} />
 
           <div class="_header-contact-actions flex items-center gap-4">
-            <Button href="#contact" text="Позвонить" variant="primary" />
+            <Button href="#contact" text="Позвонить" variant="accent" />
             {/* Условие для отображения личного кабинета, нужно брать из админки */}
             {/* сейчас просто написано чтото рандомное */}
             {/* в MobileNav.astro тоже */}

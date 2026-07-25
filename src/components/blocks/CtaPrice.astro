@@ -16,12 +16,12 @@ const discount = getDiscountPercent(brandData.main.adv_price_percent);
 const { price, discountedPrice, showDiscount } = getGlobalMinPriceWithDiscount(brandData.services, discount);
 ---
 
-<section class="flex flex-col lg:flex-row justify-between gap-6 p-6 lg:p-10 rounded-xl bg-cta-surface text-cta-text" data-cmp="CtaPrice">
+<section class="flex flex-col lg:flex-row justify-between gap-6 p-6 lg:p-10 rounded-2xl bg-cta-surface text-cta-text add-shadow" data-cmp="CtaPrice">
   <div>
     <div class="_text typo-h5">Стоимость наших услуг</div>
     <div class="_price mt-6">
       <span class="typo-t1">от</span>
-      <span class="typo-h3">
+      <span class="typo-h3 bg-button-surface-accent-inverse rounded-lg px-1">
         {
           brandData.main?.adv_price && Number(brandData.main.adv_price) > 0
             ? brandData.main.adv_price

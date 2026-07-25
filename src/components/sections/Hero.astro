@@ -21,33 +21,14 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
 
 {
   type == "main" && (
-    <section class="hero grid grid-cols-[100%] min-h-[650px] bg-hero-main-surface text-hero-main-text overflow-clip" data-cmp="Hero">
+    <section
+      class="hero grid grid-cols-[100%] lg:min-h-[800px] lg:mt-[-140px] lg:pt-[140px] mx-2 lg:mx-4 rounded-t-3xl lg:rounded-t-[60px] add-gradient bg-hero-main-surface text-hero-main-text overflow-clip"
+      data-cmp="Hero"
+    >
       <div class="container h-full">
-        <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center h-full">
-          <div class="_hero-image self-end order-last lg:order-first origin-bottom-right scale-130">
-            <img class="" src="/images/hero-main.webp" alt="" fetchpriority="high" />
-          </div>
-
-          <div class="_hero-content flex flex-col gap-10  py-8">
-            <h1 class="_hero-title typo-h1 text-left text-balance isolate">
-              Работники для любых задач{" "}
-              <span class="relative">
-                <span>от {showDiscount ? discountedPrice : price} ₽</span>
-                <svg
-                  class="absolute -z-1 inset-0 scale-110 translate-y-[15%] w-full"
-                  viewBox="0 0 332 114"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M179.323 97.9204C81.9425 97.9204 3 76.6718 3 50.4602C3 24.2487 81.9425 3 179.323 3C276.704 3 330.961 22.0588 328.946 55.3183C331.465 95.6782 189.649 108.186 102.245 111"
-                    stroke="#DDE5FA"
-                    stroke-width="6"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </span>
-            </h1>
+        <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-start lg:items-center h-full max-w-[1300px] mx-auto">
+          <div class="_hero-content flex flex-col gap-10 py-8 justify-self-center">
+            <h1 class="_hero-title typo-h1 text-left text-balance isolate">Исполнители для любых задач</h1>
 
             <HeroFeatures />
 
@@ -56,6 +37,10 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
                 <Button href="#kp" variant="accent" text="Получить КП" />
               </div>
             </div>
+          </div>
+
+          <div class="_hero-image justify-self-center">
+            <img class="" src="/images/hero-main.webp" alt="" fetchpriority="high" />
           </div>
         </div>
       </div>
@@ -66,34 +51,18 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
 {
   type == "about" && (
     <section
-      class="hero grid grid-cols-[100%] min-h-[600px] bg-hero-about-surface text-hero-about-text overflow-clip isolate"
+      class="hero grid grid-cols-[100%] lg:min-h-[750px] lg:mt-[-196px] lg:pt-[196px] mx-2 lg:mx-4 rounded-t-3xl lg:rounded-t-[60px] add-gradient bg-hero-about-surface text-hero-about-text overflow-clip isolate"
       data-cmp="Hero"
     >
       <div class="container h-full">
-        <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-2 items-start lg:items-center h-full">
+        <div class="_hero-inner relative grid grid-cols-1 lg:grid-cols-2 lg:items-center h-full">
           <div class="_hero-content flex flex-col gap-10 py-8">
-            <h1 class="_hero-title typo-h1 text-left text-balance isolate">
-              Рабочий Экспресс выполнил
-              <span class="whitespace-nowrap relative">
-                87 000{" "}
-                <svg
-                  class="absolute -z-1 inset-0 scale-130 translate-y-[18%] w-full"
-                  viewBox="0 0 332 114"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M179.323 97.9204C81.9425 97.9204 3 76.6718 3 50.4602C3 24.2487 81.9425 3 179.323 3C276.704 3 330.961 22.0588 328.946 55.3183C331.465 95.6782 189.649 108.186 102.245 111"
-                    stroke="#DDE5FA"
-                    stroke-width="6"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </span>
-              заказов за 10&nbsp;лет работы
-            </h1>
+            <h1 class="_hero-title typo-h1 text-left text-balance isolate">Лидер в сфере рабочего персонала с 2010 года</h1>
 
-            <p>98.4% клиентов оценили оказанные им услуги на отлично</p>
+            <p class="max-w-[473px] text-text-secondary typo-t3">
+              «Экспресс-Грузчики» — это ведущая компания по аутсорсингу. Плодотворно работает в сфере оказания услуг физическим лицам
+              и организациям с 2010 года
+            </p>
 
             <div class="_hero-actions flex items-center gap-8">
               <div class="_hero-actions-items">
@@ -102,7 +71,7 @@ const firstServiceUrl = brandData.services[0].url.toLowerCase();
             </div>
           </div>
 
-          <div class="_hero-image justify-self-center self-end origin-bottom scale-120">
+          <div class="_hero-image justify-self-center">
             <img src="/images/hero-about.webp" alt="" fetchpriority="high" />
           </div>
         </div>
