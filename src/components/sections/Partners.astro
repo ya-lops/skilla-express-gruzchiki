@@ -14,10 +14,10 @@ const { brandData, full = false } = Astro.props;
 const allPartnersLogos = [...brandData.partners.default_logos, ...(brandData.partners.additional_logos || [])];
 ---
 
-<section class:list={["partners", full ? "py-8 md:py-10 lg:py-20 bg-surface-secondary" : "py-10"]} data-cmp="Partners">
+<section class:list={["partners", full ? "py-8 md:py-10 lg:py-20 mx-2 lg:mx-4 rounded-t-3xl lg:rounded-t-[60px] add-gradient" : "py-10"]} data-cmp="Partners">
   <div class="container">
     <div class="_partners-inner">
-      {full && <h2 class="_partners-title mb-8 md:12 lg:mb-16 typo-h2">Мы сотрудничаем</h2>}
+      {full && <h2 class="_partners-title mb-8 md:12 lg:mb-16 typo-h2">Наши клиенты</h2>}
 
       <div
         class:list={[
